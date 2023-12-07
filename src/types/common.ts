@@ -7,6 +7,11 @@ export enum GeneratorLength {
   ExtraLong = 'extra long',
 }
 
-export interface mAPIOptions {
+export interface mAPIStaticOptions {
   [key: string]: any;
+}
+
+export interface mAPIAsyncOptions extends mAPIStaticOptions {
+  delay: number; // Milliseconds
+  fail?: boolean;
 }
