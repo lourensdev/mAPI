@@ -9,7 +9,7 @@ import { GeneratorLength } from '../../types/common';
 export const generateArticleParagraph = (
   paragraphLength: GeneratorLength = GeneratorLength.Medium,
 ): string => {
-  const sentences = [
+  const SENTENCES = [
     'Technology continues to evolve at a rapid pace, shaping the way we live and work.',
     'In recent years, artificial intelligence has gained prominence, revolutionizing various industries.',
     'Advancements in medical science have led to breakthroughs in treatment and improved healthcare outcomes.',
@@ -23,25 +23,25 @@ export const generateArticleParagraph = (
   ];
 
   // Randomize sentence order
-  sentences.sort(() => Math.random() - 0.5);
+  SENTENCES.sort(() => Math.random() - 0.5);
 
   let paragraph = '';
 
   switch (paragraphLength) {
     case GeneratorLength.Short:
-      paragraph = sentences.slice(0, 2).join(' ');
+      paragraph = SENTENCES.slice(0, 2).join(' ');
       break;
     case GeneratorLength.Medium:
-      paragraph = sentences.slice(0, 3).join(' ');
+      paragraph = SENTENCES.slice(0, 3).join(' ');
       break;
     case GeneratorLength.Long:
-      paragraph = sentences.slice(0, 4).join(' ');
+      paragraph = SENTENCES.slice(0, 4).join(' ');
       break;
     case GeneratorLength.ExtraLong:
-      paragraph = sentences.join(' ');
+      paragraph = SENTENCES.join(' ');
       break;
     default:
-      paragraph = sentences.slice(0, 3).join(' ');
+      paragraph = SENTENCES.slice(0, 3).join(' ');
   }
 
   return paragraph;

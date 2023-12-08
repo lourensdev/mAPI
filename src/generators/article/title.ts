@@ -9,7 +9,7 @@ import { GeneratorLength } from '../../types/common';
 export const generateArticleTitle = (
   titleLength: GeneratorLength = GeneratorLength.Medium,
 ): string => {
-  const topics = [
+  const TOPICS = [
     'The Future of Technology',
     'Exploring Space Exploration',
     'Healthy Living Tips',
@@ -21,7 +21,7 @@ export const generateArticleTitle = (
     'Advancements in Medical Science',
     'The Impact of Social Media on Society',
   ];
-  const prefixes = [
+  const PREFIXES = [
     'Unveiling',
     'Discovering',
     'Navigating',
@@ -33,7 +33,7 @@ export const generateArticleTitle = (
     'Championing',
     'Exploring',
   ];
-  const suffixes = [
+  const SUFFIXES = [
     ': A Deep Dive',
     'and Its Implications',
     'for a Sustainable Future',
@@ -46,11 +46,11 @@ export const generateArticleTitle = (
     'for a Changing World',
   ];
 
-  const randomTopic = () => topics[Math.floor(Math.random() * topics.length)];
+  const randomTopic = () => TOPICS[Math.floor(Math.random() * TOPICS.length)];
   const randomPrefix = () =>
-    prefixes[Math.floor(Math.random() * prefixes.length)];
+    PREFIXES[Math.floor(Math.random() * PREFIXES.length)];
   const randomSuffix = () =>
-    suffixes[Math.floor(Math.random() * suffixes.length)];
+    SUFFIXES[Math.floor(Math.random() * SUFFIXES.length)];
 
   let articleTitle = '';
 

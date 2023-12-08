@@ -9,7 +9,7 @@ import { GeneratorLength } from '../../types/common';
 export const generateArticleBlurb = (
   biasedLength: GeneratorLength = GeneratorLength.Medium,
 ): string => {
-  const adjectives = [
+  const ADJECTIVES = [
     'Intriguing',
     'Insightful',
     'Captivating',
@@ -22,7 +22,7 @@ export const generateArticleBlurb = (
     'Inspirational',
   ];
 
-  const verbs = [
+  const VERBS = [
     'explores',
     'examines',
     'discusses',
@@ -35,7 +35,7 @@ export const generateArticleBlurb = (
     'analyzes',
   ];
 
-  const subjects = [
+  const SUBJECTS = [
     'the latest trends',
     'key challenges',
     'innovative solutions',
@@ -48,7 +48,7 @@ export const generateArticleBlurb = (
     'transformative ideas',
   ];
 
-  const connectors = [
+  const CONNECTORS = [
     ', offering',
     ', providing',
     ', delivering',
@@ -62,11 +62,11 @@ export const generateArticleBlurb = (
   ];
 
   const randomAdjective =
-    adjectives[Math.floor(Math.random() * adjectives.length)];
-  const randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
-  const randomSubject = subjects[Math.floor(Math.random() * subjects.length)];
+    ADJECTIVES[Math.floor(Math.random() * ADJECTIVES.length)];
+  const randomVerb = VERBS[Math.floor(Math.random() * VERBS.length)];
+  const randomSubject = SUBJECTS[Math.floor(Math.random() * SUBJECTS.length)];
   const randomConnector =
-    connectors[Math.floor(Math.random() * connectors.length)];
+    CONNECTORS[Math.floor(Math.random() * CONNECTORS.length)];
 
   let blurb = '';
 
