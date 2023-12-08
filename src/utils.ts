@@ -1,5 +1,6 @@
 /**
  * Generate content by looping a callback function for a set amount of times.
+ * Used to create quick lists of similar content.
  *
  * @param {*} callback
  * @param {number} [total=1]

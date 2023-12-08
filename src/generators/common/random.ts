@@ -1,7 +1,7 @@
 import { GeneratorLength } from '../../types/common';
 
 /**
- * Generates a random GeneratorLength value.
+ * Generates a random GeneratorLength value for more dynamic content.
  * @returns {GeneratorLength} A random GeneratorLength value.
  */
 export const randomGeneratorLength = (): GeneratorLength => {

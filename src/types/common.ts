@@ -1,5 +1,3 @@
-import { Article } from '../generators/article';
-
 export enum GeneratorLength {
   Short = 'short',
   Medium = 'medium',

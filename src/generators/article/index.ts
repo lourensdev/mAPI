@@ -5,6 +5,9 @@ import { generateArticleMeta } from './meta';
 import { generateArticleParagraph } from './paragraph';
 import { generateArticleTitle } from './title';
 
+/*
+ * Article generators namespace
+ */
 export namespace Article {
   export function Title(length?: GeneratorLength): string {
     return generateArticleTitle(length);

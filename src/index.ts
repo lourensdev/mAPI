@@ -1,12 +1,46 @@
-import { Article } from './generators/article';
-import { Common } from './generators/common';
 import { mAPIAsyncOptions, mAPIStaticOptions } from './types/common';
-import { Util } from './utils';
 
+/**
+ * Static mock API call
+ *
+ * e.g:
+ * const staticCall = smAPI({
+ *   id: Common.UUID(true),
+ *   active: Common.Boolean(),
+ *   title: Article.Title(),
+ *   blurb: Article.Blurb(),
+ *   paragraph: Article.Paragraph(),
+ *   meta: Article.Meta(),
+ *   body: Article.Body(),
+ *   looped: Util.Loop(() => Article.Meta(), 5),
+ * });
+ *
+ * @param {mAPIStaticOptions} options
+ * @return {*}  {mAPIStaticOptions}
+ */
 export const smAPI = (options: mAPIStaticOptions): mAPIStaticOptions => {
   return options;
 };
 
+/**
+ * Asyncronous mock API call
+ *
+ * e.g:
+ * const asyncCall = mAPI({
+ *   delay: 1000,
+ *   id: Common.UUID(true),
+ *   active: Common.Boolean(),
+ *   title: Article.Title(),
+ *   blurb: Article.Blurb(),
+ *   paragraph: Article.Paragraph(),
+ *   meta: Article.Meta(),
+ *   body: Article.Body(),
+ *   looped: Util.Loop(() => Article.Meta(), 5),
+ * });
+ *
+ * @param {mAPIAsyncOptions} options
+ * @return {*}  {Promise<mAPIStaticOptions>}
+ */
 export const mAPI = async (
   options: mAPIAsyncOptions,
 ): Promise<mAPIStaticOptions> => {
@@ -22,26 +56,3 @@ export const mAPI = async (
     }, options.delay);
   });
 };
-
-const staticCall = smAPI({
-  id: Common.UUID(true),
-  active: Common.Boolean(),
-  title: Article.Title(),
-  blurb: Article.Blurb(),
-  paragraph: Article.Paragraph(),
-  meta: Article.Meta(),
-  body: Article.Body(),
-  looped: Util.Loop(() => Article.Meta(), 5),
-});
-
-const asyncCall = mAPI({
-  delay: 1000,
-  id: Common.UUID(true),
-  active: Common.Boolean(),
-  title: Article.Title(),
-  blurb: Article.Blurb(),
-  paragraph: Article.Paragraph(),
-  meta: Article.Meta(),
-  body: Article.Body(),
-  looped: Util.Loop(() => Article.Meta(), 5),
-});
